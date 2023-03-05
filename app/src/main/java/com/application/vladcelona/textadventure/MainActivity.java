@@ -25,21 +25,30 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         TextView mainText = findViewById(R.id.main_text);
-        ImageView mainImage = findViewById(R.id.main_image);
 
         Button firstChoice = findViewById(R.id.first_choice);
         Button secondChoice = findViewById(R.id.second_choice);
         Button thirdChoice = findViewById(R.id.third_choice);
 
-        ArrayList<int[]> story = new LoadStory().getStoryList();
-        while (index < story.size()) {
-            if (index == 0) {
-                firstChoice.setVisibility(View.INVISIBLE);
-                secondChoice.setVisibility(View.INVISIBLE);
+        mainText.setText(getResources().getText(R.string.start_1).toString());
 
-                mainText.setText(getResources().getText(story.get(0)[0]).toString());
-                thirdChoice.setOnClickListener(view -> index++);
+        ArrayList<int[]> story = new LoadStory().getStoryList();
+        firstChoice.setVisibility(View.INVISIBLE);
+        secondChoice.setVisibility(View.INVISIBLE);
+
+        thirdChoice.setOnClickListener(view -> {
+            mainText.setText(getResources().getText(story.get(1)[0]).toString());
+            firstChoice.setVisibility(View.VISIBLE);
+            secondChoice.setVisibility(View.VISIBLE);
+        });
+
+        firstChoice.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                firstChoice.setText("HELLO");
             }
-        }
+        });
+
+//        new ExecuteStory(firstChoice, secondChoice, thirdChoice, mainText);
     }
 }

@@ -27,7 +27,7 @@
                 android:id="@+id/oxygen_image"
                 android:layout_width="50dp"
                 android:layout_height="50dp"
-                android:background="@color/black"
+                android:background="@color/teal_200"
                 android:padding="16dp"
                 app:layout_constraintBottom_toTopOf="@+id/oxygen_level"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -77,43 +77,17 @@
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/second_person_layout"
+    <TextView
+        android:id="@+id/main_text"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:clickable="true"
-        android:orientation="vertical"
+        android:gravity="center"
+        android:textSize="20sp"
+        android:padding="24dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHeight_default="spread"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintWidth_default="wrap">
-
-        <ImageView
-            android:id="@+id/main_image"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            app:layout_constraintBottom_toTopOf="@+id/main_text"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <TextView
-            android:id="@+id/main_text"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:gravity="center"
-            android:paddingBottom="6dp"
-            android:textColor="@color/white"
-            app:layout_constrainedWidth="true"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintHorizontal_chainStyle="packed"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintWidth_default="wrap" />
-
-    </androidx.constraintlayout.widget.ConstraintLayout>
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/top_content_layout" />
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/bottom_content_layout"
@@ -128,7 +102,7 @@
 
         <Button
             android:id="@+id/first_choice"
-            android:layout_width="100dp"
+            android:layout_width="120dp"
             android:layout_height="100dp"
             android:backgroundTint="@color/teal_700"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -138,7 +112,7 @@
 
         <Button
             android:id="@+id/third_choice"
-            android:layout_width="100dp"
+            android:layout_width="120dp"
             android:layout_height="100dp"
             android:backgroundTint="@color/teal_700"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -148,7 +122,7 @@
 
         <Button
             android:id="@+id/second_choice"
-            android:layout_width="100dp"
+            android:layout_width="120dp"
             android:layout_height="100dp"
             android:backgroundTint="@color/teal_700"
             app:layout_constraintBottom_toBottomOf="parent"
