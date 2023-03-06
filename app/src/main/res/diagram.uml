@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement>C:/Users/vladb/AndroidStudioProjects/TextAdventure/app/src/main/java/com</OriginalElement>
+  <nodes>
+    <node x="-70.0" y="394.0">com.application.vladcelona.textadventure.LoadStory</node>
+    <node x="418.0" y="-15.0">com.application.vladcelona.textadventure.ExecuteStory</node>
+    <node x="-70.0" y="-15.0">com.application.vladcelona.textadventure.MainActivity</node>
+    <node x="167.0" y="-15.0">com.application.vladcelona.textadventure.CrewMember</node>
+  </nodes>
+  <notes />
+  <edges />
+  <settings layout="Hierarchic" zoom="0.822141560798548" showDependencies="true" x="270.5" y="260.5" />
+  <SelectedNodes />
+  <Categories>
+    <Category>Constructors</Category>
+    <Category>Fields</Category>
+    <Category>Methods</Category>
+  </Categories>
+  <SCOPE>All</SCOPE>
+  <VISIBILITY>private</VISIBILITY>
+</Diagram>
+
