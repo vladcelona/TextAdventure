@@ -41,6 +41,10 @@ public class LoadStory extends AppCompatActivity {
                 {R.string.action_2_2_2_2_3_2_1, R.string.decision_2_2_2_2_3_2_1_1, R.string.decision_2_2_2_2_3_2_1_2});
         storyList.add(new int[] // 14
                 {R.string.action_2_2_2_2_3_2_1_1});
+        storyList.add(new int[] // 15
+                {R.string.decision_2_2_2_2_3_2_2_1, R.string.decision_2_2_2_2_3_2_2_2});
+        storyList.add(new int[] // 16
+                {});
     }
 
     public ArrayList<int[]> getStoryList() { return storyList; }

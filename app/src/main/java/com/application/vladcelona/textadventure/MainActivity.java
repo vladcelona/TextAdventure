@@ -21,6 +21,7 @@ public class MainActivity extends AppCompatActivity {
     private CrewMember crewMember = new CrewMember();
     private Button firstChoice, secondChoice, thirdChoice;
     private TextView mainText, oxygenLevel, energyLevel;
+    private ImageView mainImage;
     private ArrayList<int[]> story;
 
     @Override
@@ -36,14 +37,12 @@ public class MainActivity extends AppCompatActivity {
         secondChoice = findViewById(R.id.second_choice);
         thirdChoice = findViewById(R.id.third_choice);
 
+        mainImage = findViewById(R.id.main_image);
+
         story = new LoadStory().getStoryList();
 
-        String firstTag = "0";
-        firstChoice.setTag(firstTag);
-        String secondTag = "0";
-        secondChoice.setTag(secondTag);
-        String thirdTag = "0";
-        thirdChoice.setTag(thirdTag);
+        String firstTag = "0"; String secondTag = "0"; String thirdTag = "0";
+        firstChoice.setTag(firstTag); secondChoice.setTag(secondTag); thirdChoice.setTag(thirdTag);
 
         firstChoice.setVisibility(View.INVISIBLE); secondChoice.setVisibility(View.INVISIBLE);
         mainText.setText(getResources().getText(R.string.start_1).toString());
@@ -85,10 +84,10 @@ public class MainActivity extends AppCompatActivity {
             secondChoice.setText(getResources().getText(story.get(5)[2]).toString());
 
             firstChoice.setOnClickListener(view -> {
-                firstChoice.setTag("3"); setFirstChoice();
+                secondChoice.setTag("3"); setSecondChoice();
             });
             secondChoice.setOnClickListener(view -> {
-                secondChoice.setTag("3"); setSecondChoice();
+                secondChoice.setTag("6"); setSecondChoice();
             });
         } else if (firstChoice.getTag().toString().equals("7")) {
             mainText.setText(getResources().getText(story.get(7)[0]).toString());
@@ -167,6 +166,8 @@ public class MainActivity extends AppCompatActivity {
             firstChoice.setText(getResources().getText(story.get(6)[1]).toString());
             secondChoice.setText(getResources().getText(story.get(6)[2]).toString());
 
+            mainImage.setImageResource(R.drawable.bathyscaphe);
+
             firstChoice.setOnClickListener(view -> {
                 firstChoice.setTag("7"); takeAction(0); setFirstChoice();
             });
@@ -218,7 +219,7 @@ public class MainActivity extends AppCompatActivity {
                 firstChoice.setTag("13"); takeAction(0); setFirstChoice();
             });
             secondChoice.setOnClickListener(view -> {
-                secondChoice.setTag("3"); takeAction(0); setSecondChoice();
+                secondChoice.setTag("15"); takeAction(0); setSecondChoice();
             });
         } else if (secondChoice.getTag().toString().equals("14")) {
             firstChoice.setVisibility(View.INVISIBLE); secondChoice.setVisibility(View.INVISIBLE);
@@ -229,6 +230,17 @@ public class MainActivity extends AppCompatActivity {
 
             thirdChoice.setOnClickListener(view -> {
                 thirdChoice.setTag("15"); takeAction(0); setThirdChoice();
+            });
+        } else if (secondChoice.getTag().toString().equals("15")) {
+            firstChoice.setText(getResources().getText(story.get(15)[0]).toString());
+            secondChoice.setText(getResources().getText(story.get(15)[1]).toString());
+
+            firstChoice.setOnClickListener(view -> {
+                firstChoice.setTag("3"); takeAction(0); setFirstChoice();
+            });
+
+            secondChoice.setOnClickListener(view -> {
+                secondChoice.setTag("3"); takeAction(2); setSecondChoice();
             });
         }
     }
@@ -293,8 +305,10 @@ public class MainActivity extends AppCompatActivity {
 
         if (type == 0) {
             crewMember.reduceEnergy();
-        } else {
+        } else if (type == 1) {
             crewMember.reduceEnergyShooting();
+        } else if (type == 2) {
+            crewMember.reduceToZero();
         }
 
         crewMember.reduceOxygen();

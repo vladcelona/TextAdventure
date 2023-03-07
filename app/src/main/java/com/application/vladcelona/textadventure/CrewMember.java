@@ -15,5 +15,7 @@ public class CrewMember {
 
     public boolean checkStats() { return oxygenLevel > 0 && energyLevel > 0; }
     public int getEnergyLevel() { return energyLevel; }
-    public int getOxygenLevel() {return oxygenLevel; }
+    public int getOxygenLevel() { return oxygenLevel; }
+
+    public void reduceToZero() { oxygenLevel = 0; energyLevel = 0; }
 }
